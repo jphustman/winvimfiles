@@ -17,6 +17,9 @@ endif
     NeoBundle 'jphustman/cf-utils.vim'
     NeoBundle 'cflint/cflint-syntastic'
     NeoBundle 'altercation/vim-colors-solarized'
+    NeoBundle 'vim-scripts/apachelogs.vim'
+    NeoBundle 'terryma/vim-multiple-cursors'
+    NeoBundle 'scrooloose/nerdcommenter'
     " }
     
     call neobundle#end()
@@ -126,6 +129,7 @@ if has('gui-running')
     set lines=40
     set guifont=Consolas:h10:cANSI
 else
+    set guifont=Consolas:h10:cANSI
     if &term == 'xterm' || &term == 'screen'
         set t_Co=256
     endif
