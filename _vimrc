@@ -20,6 +20,8 @@ endif
     NeoBundle 'vim-scripts/apachelogs.vim'
     NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundle 'scrooloose/nerdcommenter'
+    NeoBundle 'apachelogs.vim'
+    NeoBundle 'sukima/xmledit'
     " }
     
     call neobundle#end()
@@ -31,6 +33,9 @@ endif
 " }
 
 " Settings {
+let g:mapleader=','
+let g:maplocalleader=',,'
+
 set shiftwidth=4
 set autoindent
 set tabstop=4
@@ -60,8 +65,22 @@ noremap <leader>bg :call ToggleBG()<CR>
 
 " }
 
-let g:mapleader=','
-let g:maplocalleader=',,'
+" Auto untar gz file {
+augroup gzip
+    autocmd!
+    autocmd BufReadPre,FileReadPre     *.gz set bin
+    autocmd BufReadPost,FileReadPost   *.gz '[,']!gzip
+    autocmd BufReadPost,FileReadPost   *.gz set nobin
+    autocmd BufReadPost,FileReadPost   *.gz execute ":doautocmd BufReadPost " . expand("%:r")
+    autocmd BufWritePost,FileWritePost *.gz !mv <afile> <afile>:r
+    autocmd BufWritePost,FileWritePost *.gz !gzip <afile>:r
+
+    autocmd FileAppendPre               *.gz !gzip <afile>
+    autocmd FileAppendPre               *.gz !mv <afile>:r <afile>
+    autocmd FileAppendPost              *.gz !mv <afile> <afile>:r
+    autocmd FileAppendPost              *.gz !gzip <afile>:r
+augroup END
+" }
 
 " Mappings {
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>

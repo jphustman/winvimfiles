@@ -1,0 +1,17 @@
+# Xming Server Default Resource File
+# follow.exe and xhost.bat are in "Tools and clients"
+ExtraParams="-dpi 100"
+Menu apps {
+	"&View the log" viewlog
+	"&Tail the log" execd follow
+	"&Reload Xmingrc" reload
+	&Usage execd "Xming :999 -help"
+	"Access Control &Status" execd "xhost.bat"
+	"&Command Prompt" execd cmd
+	"Host &Finder" finder
+	separator
+}
+RootMenu apps
+SilentExit
+Debug "Jeremey Hustman's custom Xmingrc configuration file."
+
