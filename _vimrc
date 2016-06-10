@@ -14,14 +14,21 @@ endif
     " Bundles {
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'kaihendry/vim-html5'
-    NeoBundle 'jphustman/cf-utils.vim'
+    NeoBundle 'git@github.com:jphustman/cf-utils.vim'
     NeoBundle 'cflint/cflint-syntastic'
     NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'vim-scripts/apachelogs.vim'
+    NeoBundle 'apachelogs.vim'
     NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundle 'scrooloose/nerdcommenter'
     NeoBundle 'apachelogs.vim'
     NeoBundle 'sukima/xmledit'
+    NeoBundle 'clausreinke/typescript-tools.vim'
+    NeoBundle 'leafgarland/typescript-vim'
+
+    NeoBundle 'mv/Align'
+    NeoBundle 'git@github.com:jphustman/SQLUtilities.git'
+    NeoBundle 'git@github.com:jphustman/dbext.vim.git'
+
     " }
     
     call neobundle#end()
@@ -31,6 +38,7 @@ endif
 
     NeoBundleCheck
 " }
+
 
 " Settings {
 let g:mapleader=','
@@ -65,6 +73,8 @@ noremap <leader>bg :call ToggleBG()<CR>
 
 " }
 
+autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+
 " Auto untar gz file {
 augroup gzip
     autocmd!
@@ -81,6 +91,10 @@ augroup gzip
     autocmd FileAppendPost              *.gz !gzip <afile>:r
 augroup END
 " }
+
+" Typescript-Tools
+au BufRead,BufNewFile *.ts  setlocal filetype=typescript
+set rtp+=~/.vim/bundle/clausereinke/typescript-tools.vim/
 
 " Mappings {
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
