@@ -24,6 +24,7 @@ set encoding=utf-8
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/neocomplete.vim')
+    call dein#add('honza/vim-snippets')
 
     call dein#add('scrooloose/syntastic')
     call dein#add('kaihendry/vim-html5')
@@ -80,10 +81,7 @@ set encoding=utf-8
 
 " }
 
-
-
 let g:javascript_enable_domhtmlcss = 1
-
 
 " Settings {
 let g:mapleader=','
@@ -121,7 +119,7 @@ function! ToggleBG()
     endif
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
-" Settings {
+
 set complete+=kspell
 
 set ttyfast					" Smoother terminal connection
@@ -260,14 +258,12 @@ au BufRead, BufNewFile *.ts setlocal filetype=typescript
 " }
 
 if has('persistent_undo')
-	set undofile
-	set undolevels=1000
-	set undoreload=10000
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
 endif
 
 set history=1000
-
-
 
 let g:mapleader=','
 let g:maplocalleader=',,'
@@ -281,8 +277,6 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest  " compiled object files
 set wildignore+=*.sw?                             " Vim swap files
 set wildignore+=*.DS_Store                        " OSX bullshit
 set wildignore+=*.zip
-
-
 
 " Mappings {
 noremap <leader>- ddp
@@ -394,10 +388,10 @@ inoremap <c-f> function () {<cr>});<esc>O
 " Automatically place cursor after open bracket
 inoremap {<CR> {<CR>}<C-o>==<C-o>O
 inoremap [<CR> [<CR>]<C-o>==<C-o>O
+" This is here just to fix the folding issue of having open brackets in the above mapping }
 
 " Find merge conflict markers
-map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
-
+map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR> " }}}}}}
 
 " NeoComplCache {
         let g:acp_enableAtStartup = 0
@@ -482,7 +476,6 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " }
 
-
 " vim-airline {
 
     if isdirectory(expand('~/.vim/bundle/vim-airline/'))
@@ -563,6 +556,7 @@ map <C-H> <C-W>h<C-W>_
 set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
 vnoremap <C-c> "+y
+
 " }
 
 " statusline {
@@ -580,6 +574,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_css_checkers = ['csslint']
 " }
 
 " GUI Settings {
