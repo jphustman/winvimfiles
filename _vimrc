@@ -1,5 +1,6 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 
+
 if has('vim_starting')
     if &compatible
         set nocompatible " Be iMproved
@@ -31,10 +32,9 @@ set encoding=utf-8
     call dein#add('git@github.com:jphustman/cf-utils.vim')
     call dein#add('cflint/cflint-syntastic')
     call dein#add('altercation/vim-colors-solarized')
-    call dein#add('apachelogs.vim')
+    call dein#add('vimscripts/apachelogs.vim')
     call dein#add('terryma/vim-multiple-cursors')
     call dein#add('scrooloose/nerdcommenter')
-    call dein#add('apachelogs.vim')
     call dein#add('sukima/xmledit')
     call dein#add('clausreinke/typescript-tools.vim')
     call dein#add('leafgarland/typescript-vim')
@@ -607,7 +607,7 @@ function! InitializeDirectories()
     " vimviews, vimundo, and vimswap files/directories, add the following to
     " your .vimrc.before.local file:
     "   let g:spf13_consolidated_directory = <full path to desired directory>
-    "   eg: let g:spf13_consolidated_directory = $HOME . '/.vim/'
+    "   eg: let g:spf13_consolidated_directory = ~ . '/.vim/'
     if exists('g:spf13_consolidated_directory')
         let common_dir = g:spf13_consolidated_directory . prefix
     else

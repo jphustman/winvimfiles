@@ -1,3 +1,4 @@
 In home directory
-~/ mklink "_vimrc" "winvimfiles/_vimrc"
+
+mklink /D "_vimrc" "winvimfiles/_vimrc"
 
