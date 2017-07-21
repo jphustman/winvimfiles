@@ -73,6 +73,14 @@ set encoding=utf-8
     call dein#add('tpope/vim-haml')
     call dein#add('kaihendry/vim-html5')
 
+    " PHP
+    call dein#add('spf13/PIV') " PHP Integration for Vim
+    call dein#add('blueyed/smarty.vim') " Smarty plugin for Vim
+    call dein#add('beyondwords/vim-twig') " Twig plugin for Vim
+    call dein#add('arnaud-lb/vim-php-namespace')
+    call dein#add('2072/PHP-Indenting-for-VIm')
+    call dein#add('stefanich/php.vim-html-enhanced')
+
     call dein#end()
 
     " Required
