@@ -26,13 +26,14 @@ set encoding=utf-8
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/neocomplete.vim')
     call dein#add('honza/vim-snippets')
+    call dein#add('vim-scripts/matchit.zip')
 
     call dein#add('scrooloose/syntastic')
     call dein#add('kaihendry/vim-html5')
     call dein#add('git@github.com:jphustman/cf-utils.vim')
     call dein#add('cflint/cflint-syntastic')
     call dein#add('altercation/vim-colors-solarized')
-    call dein#add('vimscripts/apachelogs.vim')
+    call dein#add('vim-scripts/apachelogs.vim')
     call dein#add('terryma/vim-multiple-cursors')
     call dein#add('scrooloose/nerdcommenter')
     call dein#add('sukima/xmledit')
@@ -67,7 +68,7 @@ set encoding=utf-8
     call dein#add('Quramy/tsuquyomi')
 
     " HTML
-    call dein#add('amirh/HTML-AutoCloseTag')
+    call dein#add('vim-scripts/HTML-AutoCloseTag')
     call dein#add('hail2u/vim-css3-syntax')
     call dein#add('gorodinskiy/vim-coloresque')
     call dein#add('tpope/vim-haml')
