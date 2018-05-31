@@ -1,94 +1,94 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 
-
-if has('vim_starting')
-    if &compatible
-        set nocompatible " Be iMproved
-    endif
-
-    " Required
-    set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+if &compatible
+ set nocompatible
 endif
 
-let g:netrw_liststyle=3
-scriptencoding utf-8
-set encoding=utf-8
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Dein {
-    call dein#begin(expand('~/.vim/bundle'))
+if dein#load_state('~/.cache/dein')
+ call dein#begin('~/.cache/dein')
 
-    " Let dein manage dein
-    " Required
-    call dein#add('Shougo/dein.vim')
+ call dein#add('~/.cache/dein')
+ call dein#add('Shougo/deoplete.nvim')
 
-    " Add or remove your plugins here:
-    call dein#add('Shougo/neosnippet')
-    call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('Shougo/neocomplete.vim')
-    call dein#add('honza/vim-snippets')
-    call dein#add('vim-scripts/matchit.zip')
+ " Add or remove your plugins here:
+ call dein#add('Shougo/neosnippet')
+ call dein#add('Shougo/neosnippet-snippets')
+ call dein#add('Shougo/neocomplete.vim')
+ call dein#add('honza/vim-snippets')
+ call dein#add('vim-scripts/matchit.zip')
 
-    call dein#add('scrooloose/syntastic')
-    call dein#add('kaihendry/vim-html5')
-    call dein#add('git@github.com:jphustman/cf-utils.vim')
-    call dein#add('cflint/cflint-syntastic')
-    call dein#add('altercation/vim-colors-solarized')
-    call dein#add('vim-scripts/apachelogs.vim')
-    call dein#add('terryma/vim-multiple-cursors')
-    call dein#add('scrooloose/nerdcommenter')
-    call dein#add('sukima/xmledit')
-    call dein#add('clausreinke/typescript-tools.vim')
-    call dein#add('leafgarland/typescript-vim')
-    call dein#add('tpope/vim-fugitive')
+ call dein#add('scrooloose/syntastic')
+ call dein#add('kaihendry/vim-html5')
+ call dein#add('git@github.com:jphustman/cf-utils.vim')
+ call dein#add('cflint/cflint-syntastic')
+ call dein#add('altercation/vim-colors-solarized')
+ call dein#add('vim-scripts/apachelogs.vim')
+ call dein#add('terryma/vim-multiple-cursors')
+ call dein#add('scrooloose/nerdcommenter')
+ call dein#add('sukima/xmledit')
+ call dein#add('clausreinke/typescript-tools.vim')
+ call dein#add('leafgarland/typescript-vim')
+ call dein#add('tpope/vim-fugitive')
 
-    call dein#add('mv/Align')
-    call dein#add('git@github.com:jphustman/SQLUtilities.git')
-    call dein#add('git@github.com:jphustman/dbext.vim.git')
+ call dein#add('mv/Align')
+ call dein#add('git@github.com:jphustman/SQLUtilities.git')
+ call dein#add('git@github.com:jphustman/dbext.vim.git')
 
-    call dein#add('editorconfig/editorconfig-vim')
-    call dein#add('bling/vim-airline')
-    call dein#add('vim-airline/vim-airline-themes')
+ call dein#add('editorconfig/editorconfig-vim')
+ call dein#add('bling/vim-airline')
+ call dein#add('vim-airline/vim-airline-themes')
 
-    call dein#add('Shougo/neocomplcache')
+ call dein#add('Shougo/neocomplcache')
 
-    " javascript
-    call dein#add('elzr/vim-json')
-    call dein#add('groenewege/vim-less')
-    call dein#add('pangloss/vim-javascript')
-    call dein#add('kchmck/vim-coffee-script')
-    call dein#add('othree/javascript-libraries-syntax.vim')
-    call dein#add('matthewsimo/angular-vim-snippets')
-    call dein#add('claco/jasmine.vim')
-    call dein#add('burnettk/vim-angular')
-    call dein#add('ternjs/tern_for_vim')
+ " javascript
+ call dein#add('elzr/vim-json')
+ call dein#add('groenewege/vim-less')
+ call dein#add('pangloss/vim-javascript')
+ call dein#add('kchmck/vim-coffee-script')
+ call dein#add('othree/javascript-libraries-syntax.vim')
+ call dein#add('matthewsimo/angular-vim-snippets')
+ call dein#add('claco/jasmine.vim')
+ call dein#add('burnettk/vim-angular')
+ call dein#add('ternjs/tern_for_vim')
 
-    " typescript
-    call dein#add('leafgarland/typescript-vim')
-    call dein#add('clausreinke/typescript-tools.vim')
-    call dein#add('Quramy/tsuquyomi')
+ " typescript
+ call dein#add('leafgarland/typescript-vim')
+ call dein#add('clausreinke/typescript-tools.vim')
+ call dein#add('Quramy/tsuquyomi')
 
-    " HTML
-    call dein#add('vim-scripts/HTML-AutoCloseTag')
-    call dein#add('hail2u/vim-css3-syntax')
-    call dein#add('gorodinskiy/vim-coloresque')
-    call dein#add('tpope/vim-haml')
-    call dein#add('kaihendry/vim-html5')
+ " HTML
+ call dein#add('vim-scripts/HTML-AutoCloseTag')
+ call dein#add('hail2u/vim-css3-syntax')
+ call dein#add('gorodinskiy/vim-coloresque')
+ call dein#add('tpope/vim-haml')
+ call dein#add('kaihendry/vim-html5')
 
-    " PHP
-    call dein#add('spf13/PIV') " PHP Integration for Vim
-    call dein#add('blueyed/smarty.vim') " Smarty plugin for Vim
-    call dein#add('beyondwords/vim-twig') " Twig plugin for Vim
-    call dein#add('arnaud-lb/vim-php-namespace')
-    call dein#add('2072/PHP-Indenting-for-VIm')
-    call dein#add('stefanich/php.vim-html-enhanced')
+ " PHP
+ call dein#add('spf13/PIV') " PHP Integration for Vim
+ call dein#add('blueyed/smarty.vim') " Smarty plugin for Vim
+ call dein#add('beyondwords/vim-twig') " Twig plugin for Vim
+ call dein#add('arnaud-lb/vim-php-namespace')
+ call dein#add('2072/PHP-Indenting-for-VIm')
+ call dein#add('stefanich/php.vim-html-enhanced')
 
-    call dein#end()
+ if !has('nvim')
+   call dein#add('roxma/nvim-yarp')
+   call dein#add('roxma/vim-hug-neovim-rpc')
+ endif
 
-    " Required
-    filetype plugin indent on
-    syntax enable
+ call dein#end()
+ call dein#save_state()
+endif
 
-" }
+filetype plugin indent on
+syntax enable
+
+
+
+
 
 let g:javascript_enable_domhtmlcss = 1
 
@@ -112,12 +112,12 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
-color solarized
+colorscheme solarized
 
 highlight clear SignColumn
 highlight clear LineNr
 
-set background=dark
+"set background=dark
 function! ToggleBG()
     let s:tbg = &background
     " Inversion
@@ -585,6 +585,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_vim_checkers = ['vimlint']
 " }
 
 " GUI Settings {
@@ -655,4 +656,5 @@ function! StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 " }
+
 

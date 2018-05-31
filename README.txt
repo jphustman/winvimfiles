@@ -1,4 +1,9 @@
 In home directory
 
-mklink /D "_vimrc" "winvimfiles/_vimrc"
+git clone https://github.com/Shougo/dein.vim.git ~/.cache/dein
 
+mklink "_vimrc" "winvimfiles\_vimrc"
+
+vim
+
+:call dein#install()
