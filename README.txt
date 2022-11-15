@@ -1,6 +1,6 @@
 In home directory
 
-git clone https://github.com/Shougo/dein.vim.git ~/.cache/dein
+git clone git@github.com:Shougo/dein.vim.git ~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 mklink "_vimrc" "winvimfiles\_vimrc"
 

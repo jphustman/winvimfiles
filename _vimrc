@@ -5,92 +5,95 @@ if &compatible
 endif
 
 " Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~\.cache\dein\repos\github.com\Shougo\dein.vim
 
-if dein#load_state('~/.cache/dein')
- call dein#begin('~/.cache/dein')
+call dein#begin('~\.cache\dein\repos')
 
- call dein#add('~/.cache/dein')
- call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/dein.vim')
 
- " Add or remove your plugins here:
- call dein#add('Shougo/neosnippet')
- call dein#add('Shougo/neosnippet-snippets')
- call dein#add('Shougo/neocomplete.vim')
- call dein#add('honza/vim-snippets')
- call dein#add('vim-scripts/matchit.zip')
-
- call dein#add('scrooloose/syntastic')
- call dein#add('kaihendry/vim-html5')
- call dein#add('git@github.com:jphustman/cf-utils.vim')
- call dein#add('cflint/cflint-syntastic')
- call dein#add('altercation/vim-colors-solarized')
- call dein#add('vim-scripts/apachelogs.vim')
- call dein#add('terryma/vim-multiple-cursors')
- call dein#add('scrooloose/nerdcommenter')
- call dein#add('sukima/xmledit')
- call dein#add('clausreinke/typescript-tools.vim')
- call dein#add('leafgarland/typescript-vim')
- call dein#add('tpope/vim-fugitive')
-
- call dein#add('mv/Align')
- call dein#add('git@github.com:jphustman/SQLUtilities.git')
- call dein#add('git@github.com:jphustman/dbext.vim.git')
-
- call dein#add('editorconfig/editorconfig-vim')
- call dein#add('bling/vim-airline')
- call dein#add('vim-airline/vim-airline-themes')
-
- call dein#add('Shougo/neocomplcache')
-
- " javascript
- call dein#add('elzr/vim-json')
- call dein#add('groenewege/vim-less')
- call dein#add('pangloss/vim-javascript')
- call dein#add('kchmck/vim-coffee-script')
- call dein#add('othree/javascript-libraries-syntax.vim')
- call dein#add('matthewsimo/angular-vim-snippets')
- call dein#add('claco/jasmine.vim')
- call dein#add('burnettk/vim-angular')
- call dein#add('ternjs/tern_for_vim')
-
- " typescript
- call dein#add('leafgarland/typescript-vim')
- call dein#add('clausreinke/typescript-tools.vim')
- call dein#add('Quramy/tsuquyomi')
-
- " HTML
- call dein#add('vim-scripts/HTML-AutoCloseTag')
- call dein#add('hail2u/vim-css3-syntax')
- call dein#add('gorodinskiy/vim-coloresque')
- call dein#add('tpope/vim-haml')
- call dein#add('kaihendry/vim-html5')
-
- " PHP
- call dein#add('spf13/PIV') " PHP Integration for Vim
- call dein#add('blueyed/smarty.vim') " Smarty plugin for Vim
- call dein#add('beyondwords/vim-twig') " Twig plugin for Vim
- call dein#add('arnaud-lb/vim-php-namespace')
- call dein#add('2072/PHP-Indenting-for-VIm')
- call dein#add('stefanich/php.vim-html-enhanced')
-
- if !has('nvim')
-   call dein#add('roxma/nvim-yarp')
-   call dein#add('roxma/vim-hug-neovim-rpc')
- endif
-
- call dein#end()
- call dein#save_state()
+if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
 endif
+
+call dein#add('Shougo/deoplete.nvim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('honza/vim-snippets')
+call dein#add('vim-scripts/matchit.zip')
+
+call dein#add('scrooloose/syntastic')
+call dein#add('git@github.com:jphustman/cf-utils.vim')
+call dein#add('cflint/cflint-syntastic')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('vim-scripts/apachelogs.vim')
+call dein#add('terryma/vim-multiple-cursors')
+call dein#add('scrooloose/nerdcommenter')
+call dein#add('sukima/xmledit')
+call dein#add('tpope/vim-fugitive')
+
+"call dein#add('mv/Align')
+call dein#add('git@github.com:jphustman/SQLUtilities.git')
+call dein#add('git@github.com:jphustman/dbext.vim.git')
+
+call dein#add('editorconfig/editorconfig-vim')
+call dein#add('bling/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+
+call dein#add('Shougo/neocomplcache')
+
+" javascript
+"call dein#add('elzr/vim-json')
+"call dein#add('groenewege/vim-less')
+"call dein#add('pangloss/vim-javascript')
+"call dein#add('kchmck/vim-coffee-script')
+"call dein#add('othree/javascript-libraries-syntax.vim')
+"call dein#add('matthewsimo/angular-vim-snippets')
+"call dein#add('claco/jasmine.vim')
+"call dein#add('burnettk/vim-angular')
+"call dein#add('ternjs/tern_for_vim')
+" React
+call dein#add('yuezk/vim-js')
+call dein#add('maxmellon/vim-jsx-pretty')
+
+" typescript
+call dein#add('leafgarland/typescript-vim')
+call dein#add('clausreinke/typescript-tools')
+call dein#add('Quramy/tsuquyomi')
+
+" HTML
+call dein#add('vim-scripts/HTML-AutoCloseTag')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('gorodinskiy/vim-coloresque')
+call dein#add('tpope/vim-haml')
+call dein#add('kaihendry/vim-html5')
+
+" PHP
+call dein#add('spf13/PIV') " PHP Integration for Vim
+call dein#add('blueyed/smarty.vim') " Smarty plugin for Vim
+call dein#add('beyondwords/vim-twig') " Twig plugin for Vim
+call dein#add('arnaud-lb/vim-php-namespace')
+call dein#add('2072/PHP-Indenting-for-VIm')
+call dein#add('stefanich/php.vim-html-enhanced')
+
+call dein#end()
+call dein#save_state()
 
 filetype plugin indent on
 syntax enable
 
+if dein#check_install()
+    call dein#install()
+endif
 
 
 
 
-let g:javascript_enable_domhtmlcss = 1
+
+"let g:javascript_enable_domhtmlcss = 1
 
 " Settings {
 let g:mapleader=','
@@ -256,8 +259,8 @@ set tabpagemax=15
 " }
 
 " autocommands {
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 expandtab
+"autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
+"autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType scss setlocal ts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sw=2 expandtab
@@ -468,7 +471,7 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR> " }}}}}}
         " Enable omni completion.
         autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
         autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
         autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
         autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
@@ -487,7 +490,7 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR> " }}}}}}
 
 " vim-airline {
 
-    if isdirectory(expand('~/.vim/bundle/vim-airline/'))
+    if isdirectory(expand('~/.cache/dein/repos/github.com/vim-airline/'))
         if !exists('g:airline_theme')
             let g:airline_theme = 'solarized'
         endif
@@ -520,8 +523,8 @@ augroup END
 " }
 
 " Typescript-Tools
-au BufRead,BufNewFile *.ts  setlocal filetype=typescript
-set rtp+=~/.vim/bundle/clausereinke/typescript-tools.vim/
+"au BufRead,BufNewFile *.ts  setlocal filetype=typescript
+"set rtp+=~/.cache/dein/repos/github.com/clausereinke/typescript-tools.vim/
 
 " Mappings {
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
