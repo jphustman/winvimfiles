@@ -5,9 +5,9 @@ if &compatible
 endif
 
 " Add the dein installation directory into runtimepath
-set runtimepath+=~\.cache\dein\repos\github.com\Shougo\dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin('~\.cache\dein\repos')
+call dein#begin('~/.cache/dein/repos')
 
 call dein#add('Shougo/dein.vim')
 
